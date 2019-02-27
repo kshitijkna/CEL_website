@@ -47,7 +47,7 @@
     <link href="assets/css/style.css" rel="stylesheet">
     <link id="color-scheme" href="assets/css/colors/default.css" rel="stylesheet">
   </head>
-  <body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
+  <body id="top-top" data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
     <main>
       <div class="page-loader">
         <div class="loader">Loading...</div>
@@ -226,7 +226,7 @@
             </div>
             <ul class="works-grid works-grid-gut works-hover-w" id="works-grid" style="width: 90%; left: 5%">
               <li class="work-item illustration webdesign"><a href="http://conquest.org.in/">
-                  <div class="work-image"><img src="assets/images/portfolio/conquest.jpg" alt="Portfolio Item"/></div>
+                  <div class="work-image"><img src="assets/images/portfolio/con.png" alt="Portfolio Item"/></div>
                   <div class="work-caption font-alt">
                     <h2 class="work-title font-alt mb-40 titan-title-size-3" style="font-size: 4rem;">Conquest</h2>
                     <div class="font-alt mb-40 titan-title-size-2">India's Largest Student-run Startup Conclave</div>
@@ -279,7 +279,7 @@
                     <p class="help-block text-danger"></p>
                   </div>
                   <div class="text-center" >
-                    <button class="btn btn-block btn-round btn-d" id="cfsubmit" type="submit">Submit</button>
+                    <button class="btn btn-block btn-round btn-d" id="cfsubmit" type="submit" style="height: 40px">Submit</button>
                   </div>
                 </form>
                 <div class="ajax-response font-alt" id="contactFormResponse"></div>
@@ -291,7 +291,7 @@
                 </div>
                 <div class="alt-features-item mt-xs-60">
                   <div class="alt-features-icon"><span class="icon-map"></span></div>
-                  <h3 class="alt-features-title font-alt">Say Hello</h3>Veeresh Krishna <br/> President<br/>Email: <a href="mailto:shavak@celbits.org.in">shavak@celbits.org.in</a>
+                  <h3 class="alt-features-title font-alt">Say Hello</h3>Veeresh Krishna <br/> President<br/>Email: <a href="mailto:shavak@celbits.org.in">veeresh@celbits.org.in</a>
                 </div>
               </div>
             </div>
@@ -354,10 +354,39 @@
             </div>
           </div>
         </footer>
-      <div class="scroll-up"><a href="#totop"><i class="fa fa-arrow-up fa-2x" aria-hidden="true"></i></a></div>
+      <div class="scroll-up"><a href="#top-top"><i class="fa fa-arrow-up fa-2x" aria-hidden="true"></i></a></div>
     </main>
-      
-      <script src="assets/lib/jquery/dist/jquery.js"></script>
+    
+    <!-- smooth scroll -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+    // Add smooth scrolling to all links
+    $("a").on('click', function(event) {
+
+      // Make sure this.hash has a value before overriding default behavior
+      if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+      } // End if
+    });
+    });
+    </script>
+
+    <script src="assets/lib/jquery/dist/jquery.js"></script>
     <script src="assets/lib/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="assets/lib/wow/dist/wow.js"></script>
     <script src="assets/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js"></script>
